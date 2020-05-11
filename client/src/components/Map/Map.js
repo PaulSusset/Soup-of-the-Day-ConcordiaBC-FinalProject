@@ -16,6 +16,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { setDishes, setRestos, resetRestos } from '../../actions';
 import MyDirectionsRenderer from '../DirectionsRenderer';
+import User from '../../assets/userIcon.svg';
 
 const Map = (props) => {
   const dispatch = useDispatch();
@@ -97,7 +98,10 @@ const Map = (props) => {
         zoom={zoom}
         center={centering}
       >
-        <Marker position={{ lat: userLocation.lat, lng: userLocation.lng }} />
+        <Marker
+          position={{ lat: userLocation.lat, lng: userLocation.lng }}
+          icon={{ url: User, scaledSize: new window.google.maps.Size(30, 30) }}
+        />
         {pinSpots.length > 0 &&
           pinSpots.map((pin) => {
             let iconMarker = new window.google.maps.MarkerImage(
@@ -136,16 +140,16 @@ const Map = (props) => {
             }}
             onCloseClick={() => setSelectedMarker(null)}
           >
-            <div style={{ bottom: '100px' }}>
+            <div
+              style={{ bottom: '100px' }}
+              onClick={() => {
+                setSelectedMarker(null);
+                history.push(`/restaurant/${selectedMarker._id}`);
+              }}
+            >
               <h4>{selectedMarker.name}</h4>
               <p>{selectedMarker.phone}</p>
-              <div
-                onClick={() =>
-                  history.push(`/restaurant/${selectedMarker._id}`)
-                }
-              >
-                Go to page
-              </div>
+              <div>Go to page</div>
             </div>
           </InfoWindow>
         )}

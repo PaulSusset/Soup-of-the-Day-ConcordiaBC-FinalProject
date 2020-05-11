@@ -21,6 +21,7 @@ import Details from '../../pages/Details';
 import CreateAccount from '../../pages/CreateAccount';
 import AdminHome from '../../pages/AdminHome';
 import CreateDish from '../../pages/CreateDish';
+import Test from '../Test';
 
 const App = () => {
   const loggedIn = useSelector((state) => state.restoActions.loggedIn);
@@ -38,10 +39,13 @@ const App = () => {
         <Route path="/login">
           {loggedIn ? <Redirect to={'/adminhome'} /> : <Login />}
         </Route>
-        <Route path="/search">search results</Route>
-        <Route path="/category">category</Route>
+        {/* <Route path="/search">search results</Route>
+        <Route path="/category">category</Route> */}
         <Route path="/restaurant/:id">
           <Restaurant />
+        </Route>
+        <Route path="/test">
+          <Test />
         </Route>
         <Route path="/accountcreation">
           {loggedIn ? <Redirect to={'/adminhome'} /> : <CreateAccount />}

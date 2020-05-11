@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { logIn, displayMap } from '../../actions';
 import Spinner from '../../components/Spinner';
+import SOTD2 from '../../assets/SOTD2.png';
+import SOTD1 from '../../assets/SOTD1.png';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -40,44 +42,102 @@ const Login = () => {
     return;
   };
   return (
-    <Wrapper>
-      {!loading ? (
-        <>
-          <form onSubmit={(e) => handleLogin(e)}>
-            <input
-              type={'text'}
-              placeholder={'Email'}
-              name={'email'}
-              required
-            />
-            <input
-              type={'password'}
-              placeholder={'Password'}
-              name={'password'}
-              required
-            />
-            <input type={'submit'} value={'Log in'} />
-          </form>
-          {incorrectLogin && (
-            <div>Incorrect email & password combination, try again!</div>
-          )}
-          <Link to={'/accountcreation'}>
-            Interested in advertising your restaurant? Make an account here!
-          </Link>
-        </>
-      ) : (
-        <Spinner />
-      )}
-    </Wrapper>
+    <OverWrap>
+      <Wrapper>
+        <Logo src={SOTD1} />
+        {!loading ? (
+          <>
+            <StyledForm onSubmit={(e) => handleLogin(e)}>
+              <Title>Log in</Title>
+              <InputBox>
+                <StyledInput
+                  type={'text'}
+                  placeholder={'Email'}
+                  name={'email'}
+                  required
+                />
+                <StyledInput
+                  type={'password'}
+                  placeholder={'Password'}
+                  name={'password'}
+                  required
+                />
+              </InputBox>
+              <Btn type={'submit'} value={'Log in'} />
+            </StyledForm>
+            {incorrectLogin && (
+              <div>Incorrect email & password combination, try again!</div>
+            )}
+            <Link to={'/accountcreation'}>
+              Interested in advertising your restaurant? Make an account here!
+            </Link>
+          </>
+        ) : (
+          <Spinner />
+        )}
+      </Wrapper>
+    </OverWrap>
   );
 };
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: lightgreen;
+  background: rgb(238, 229, 186);
+  width: 80vw;
+  height: 80vh;
+`;
+
+const OverWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  margin-bottom: 20%;
+`;
+
+const InputBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-evenly;
+`;
+const Logo = styled.img`
+  height: 30%;
+  width: auto;
+`;
+const StyledInput = styled.input`
+  min-width: 120px;
+  width: 25vw;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+  }
+`;
+const Btn = styled.input`
+  color: rgb(238, 229, 186);
+  background: rgb(204, 88, 3);
+  width: 50%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+`;
+const Title = styled.h2`
+  text-align: center;
 `;
 export default Login;

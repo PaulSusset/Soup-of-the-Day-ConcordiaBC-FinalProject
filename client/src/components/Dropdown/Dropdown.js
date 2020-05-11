@@ -48,7 +48,6 @@ const Dropdown = () => {
           />
         </IconBox>
       </OverWrap>
-      {/* {displaying && ( */}
       <>
         <DropBox>
           <DropdownOptions displaying={displaying}>
@@ -124,12 +123,11 @@ const IconBox = styled.div`
   display: flex;
   padding: 4px;
   padding-right: 10px;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 5vh;
-  width: 5vh;
+  justify-content: center;
+  align-items: center;
+  height: 7vh;
+  width: 7vh;
   color: rgb(238, 229, 186);
-  /* flex-grow: 2; */
 `;
 
 const DropBox = styled.div`
@@ -139,7 +137,8 @@ const DropBox = styled.div`
 const Logo = styled.img`
   height: 7vh;
   width: 7vh;
-  padding: 4px;
+  /* padding: 4px; */
+  margin: 0;
 `;
 const OverWrap = styled.div`
   display: flex;
@@ -151,6 +150,8 @@ const OverWrap = styled.div`
   background: rgb(204, 88, 3);
   height: 7vh;
   z-index: 5;
+  padding: 0;
+  margin: 0;
 `;
 
 const rotate = keyframes`
@@ -175,10 +176,14 @@ const slideIn = keyframes`
 from {
   top: 0%;
     bottom: 100%;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
     to {
     top: 100%;
-    bottom: ''
+    bottom: '';
+    opacity: 1;
+    animation-fill-mode: forwards;
   }
 `;
 
@@ -186,9 +191,10 @@ const slideOut = keyframes`
 from {
   top: 100%;
     bottom: ''
+    opacity: 1;
 }
     to {
-    display: none;
+    opacity: 0;
     top: 0%;
     bottom: 100%;
   }`;

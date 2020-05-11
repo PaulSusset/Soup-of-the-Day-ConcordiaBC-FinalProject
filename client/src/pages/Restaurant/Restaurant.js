@@ -229,8 +229,11 @@ const Restaurant = () => {
 };
 
 const Banner = styled.img`
-  width: 30%;
+  max-width: 30vw;
+  max-height: 30vw;
+  width: auto;
   height: auto;
+  object-fit: cover;
 `;
 
 const Wrapper = styled.div`
