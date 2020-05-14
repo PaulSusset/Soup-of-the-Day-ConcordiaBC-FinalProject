@@ -7,7 +7,7 @@ The idea behind the app is to provide a hub for local restaurants to advertise r
 
 [![Soup of the day demo](https://i.imgur.com/FVPJELQ.png)](https://www.youtube.com/watch?v=dWs-6VTryA0)
 
-Designed as mobile-first on the user end and tablet-first for the post-login pages (restaurant admin), my vision for use would be people working downtown or other high-business density areas wanting to know what's the daily item for their nearby restaurants.
+Designed as mobile-first on the user end and tablet-first for the post-login pages (restaurant admin), my vision for use would be people working downtown or other high business-density areas wanting to know what's the daily item for their nearby restaurants.
 
 ## Technology Used
 
