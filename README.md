@@ -4,7 +4,7 @@ Soup of the Day is my final project for Concordia Bootcamps.
 
 ## Demo
 
-[![Soup of the day demo](https://imgur.com/FVPJELQ)](https://www.youtube.com/watch?v=dWs-6VTryA0)
+[![Soup of the day demo](https://i.imgur.com/FVPJELQ.png)](https://www.youtube.com/watch?v=dWs-6VTryA0)
 
 ## Technology Used
 
