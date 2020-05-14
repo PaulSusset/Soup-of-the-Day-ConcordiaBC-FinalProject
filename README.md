@@ -1,69 +1,28 @@
-- MVP
-  - client-side
-    - filters / map (type of/price/etc)
-    - list of restaurants with soup
-    - rating system for both restaurant and item
-    - contact
-    - login / signup
-  - restaurant-side
-    - set schedule
-    - photos, description
-    - contact modal
-    - sold-out option
-    - login / signup
-    - additional info on restaurant (various)
-  ***
-  - client-side: on map itinerary
-  - restaurant-side: repeating, if applicable
+# Soup of the Day
 
-* Pages:
+Soup of the Day is my final project for Concordia Bootcamps.
 
-  - Login
-  - homepage (map and nearby results)
-  - search
-  - restaurant page
-  - itinerary (stretch)
-  - contact
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dWs-6VTryA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  - add restaurant
-  - modify items
+## Technology Used
 
-- Components
+### Front-end
 
-  - search bar
-  - filters
-  - MAP
+This app's front-end was built using React.js. Important modules are styled-components, redux, react-google-maps
 
-Backend
+### Back-end
 
-- endpoints
+The back-end was built using Node.js, express, MongoDB, Google Maps Javascript API
 
-  - Add dish
-  - edit dish (days, price, out of stock)
-  - new restaurant
-  - rating
-  - search
-  - sold out
+## Challenges and what's next
 
-  - restaurant info
+Developping this app went pretty smoothly, but here are some of the key challenges I faced:
 
-STRETCH
+- Integrating the map and Google's services. Google doesn't have an official React library so finding the right library was a bit of a challenge. I initally used google-map-react, but the documentation was very incomplete and hadn't been updated in over a year. Running into many problems I decided to swap it out halfway through the project for react-google-maps, which has more recent and complete support at the only downside of being more difficult to make custom markers for.
+- Building data! This was my first foray into making an app with no supplied data. Going through the iterations and wanting to know how to format data points for ease of use and reference was a struggle. The app is built to have user-provided data, so having a strong template was necessary.
 
-- allow users to input origin address
-- validate addresses
-- allow times to change between bike, car and walk
-- opening hours
+If I have a chance to keep working on this, I'd like to add the following features:
 
-Things to do
-
-Hover highlight linked between list and map marker
-map marker
-Set bound on resto select
-database images
-add item page
-edit item page
-user / resto login
-filter bar with days of the week dropdown
-search function
-# ConcordiaBC--Final
-# ConcordiaBC---FinalProject
+- Sort products (distance, price)
+- Search function. I have already allowed restaurants to submit search tags for their dishes. A challenge I can foresee is that MongoDB allows for setting an index to search through, but only returns full-word matches. Beyond pulling everything and parsing the results for a match in Node I haven't yet thought of a solution
+- Rework the dishes display component. With my mobile-first design, I couldn't find a way to include the days of the week the item was available for without over-encumbering the design.

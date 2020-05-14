@@ -192,11 +192,14 @@ from {
   top: 100%;
     bottom: ''
     opacity: 1;
+
+    animation-fill-mode: forwards;
 }
     to {
     opacity: 0;
     top: 0%;
     bottom: 100%;
+    animation-fill-mode: forwards;
   }`;
 
 const StyledIcon = styled(Icon)`
