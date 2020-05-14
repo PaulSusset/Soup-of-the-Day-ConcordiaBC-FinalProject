@@ -2,7 +2,9 @@
 
 Soup of the Day is my final project for Concordia Bootcamps.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dWs-6VTryA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Demo
+
+[![Soup of the day demo](https://imgur.com/FVPJELQ)](https://www.youtube.com/watch?v=dWs-6VTryA0)
 
 ## Technology Used
 
