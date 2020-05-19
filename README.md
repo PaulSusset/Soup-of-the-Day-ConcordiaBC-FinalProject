@@ -9,6 +9,12 @@ The idea behind the app is to provide a hub for local restaurants to advertise r
 
 Designed as mobile-first on the user end and tablet-first for the post-login pages (restaurant admin), my vision for use would be people working downtown or other high business-density areas wanting to know what's the daily item for their nearby restaurants.
 
+## Launching
+1. Clone the repo
+2. With 2 terminal windows, change directory into client/ and server/.
+3. For each, run command ```yarn start```
+Note that the mongo database used for the project was stored locally so no data will appear. 
+
 ## Technology Used
 
 ### Front-end
