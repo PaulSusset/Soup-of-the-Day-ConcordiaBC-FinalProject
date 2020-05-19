@@ -12,7 +12,7 @@ Designed as mobile-first on the user end and tablet-first for the post-login pag
 ## Launching
 1. Clone the repo
 2. With 2 terminal windows, change directory into client/ and server/.
-3. For each, run command ```yarn start```
+3. For each, run command ```yarn install```, then ```yarn start```
 Note that the mongo database used for the project was stored locally so no data will appear. 
 
 ## Technology Used
